@@ -1,15 +1,9 @@
 import os
 from weasyprint import HTML, CSS
-from weasyprint.fonts import FontConfiguration
+from weasyprint.text.fonts import FontConfiguration
 
-class PDFGenerator:
-    """
-    TODO
-    """
+class GeneratePDF:
     def __init__(self, html, pdf, base_url=None, margin_x=2, margin_y=30):
-        """
-        TODO explain the params
-        """
         self.html = html
         self.pdf = pdf
         self.margin_x = margin_x
@@ -29,7 +23,7 @@ class PDFGenerator:
         
         return pdf
 
-generator = PDFGenerator(
+generator = GeneratePDF(
     f'{os.getcwd()}/resume/html/index.html',
     f'{os.getcwd()}/resume/pdf/aaronmarr_cv.pdf',
     None,
